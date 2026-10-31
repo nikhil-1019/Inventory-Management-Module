@@ -1,0 +1,19 @@
+@model Product
+<h1>Add New Product</h1>
+<form asp-action="Create" method="post" class="product-form">
+    <div asp-validation-summary="ModelOnly" class="error"></div>
+    <label asp-for="ProductName">Product Name</label>
+    <input asp-for="ProductName" />
+    <span asp-validation-for="ProductName" class="error"></span>
+
+    <label asp-for="Quantity">Quantity</label>
+    <input asp-for="Quantity" type="number" min="0" />
+    <span asp-validation-for="Quantity" class="error"></span>
+
+    <label asp-for="Price">Price</label>
+    <input asp-for="Price" type="number" min="0" step="0.01" />
+    <span asp-validation-for="Price" class="error"></span>
+
+    <button type="submit">Save Product</button>
+    <a asp-action="Index">Back to Inventory</a>
+</form>
